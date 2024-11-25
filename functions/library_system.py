@@ -32,6 +32,11 @@ def search_book(title):
     book = {}
     with open(DATABASE_FILE, "r") as f:
         book = f.readlines()
+        for i in book:
+            newbook= i.strip('\n').split(',')
+            if title  in newbook:
+                return dict(newbook) 
+
 
 
 def list_books():
